@@ -7,15 +7,6 @@ $(function() {
       }
   })
 
-  pubnubDemo.subscribe({
-      channels: ['survey']
-  });
-  pubnubDemo.publish({
-      message: {
-          "color" : "blue"
-      },
-      channel: 'survey'
-  });
 
   window.data = [{name: "coordinate with administrators", vote: 0},
                 {name: "collabrate with teachers from multiple subjects", vote: 0},
@@ -103,4 +94,11 @@ $(function() {
 
   init_votes();
   draw(data);
+
+  pubnubDemo.publish({
+      message: {
+          "color" : "blue"
+      },
+      channel: 'survey'
+  });
 });
